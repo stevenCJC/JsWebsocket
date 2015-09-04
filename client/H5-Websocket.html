@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>H5-Websocket</title>
+
+
+</head>
+
+<body>
+<input type="text" id="text">
+</body>
+</html>
+<script>
+	
+	var ws=new WebSocket("ws://127.0.0.1:3003"); 
+	
+	ws.onmessage = function(event) { 
+		document.getElementById('text').value=event.data;
+	}; 
+	ws.onclose = function(event) { 
+	}; 
+	ws.onopen = function(event) { 
+		ws.send("Hello, Server!"); 
+	}; 
+	ws.onerror =function(event){
+	};
+	
+</script>

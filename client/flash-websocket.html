@@ -1,0 +1,52 @@
+<html>
+<head>
+<script language="JavaScript">
+　 
+　 var jsReady = false;
+　　 function isReady() {
+　　　　 return jsReady;
+　　 }
+　　 function pageInit() {
+　　　　 jsReady = true;
+　　　　 sendToActionScript(30,30);
+　　 }
+　　 function thisMovie(movieName) {
+　 
+　　　　 if (navigator.appName.indexOf("Microsoft") != -1) {
+　　　　　　 return window[movieName];
+　　　　 } else {
+　　　　　　 return document.embeds[movieName]; //document[movieName];
+　　　　 }
+
+　　 }
+　　 function sendToActionScript(val1) {
+　 　 thisMovie("A").sendToActionScript(val1,val2);
+　　 }
+　　 function sendToJavaScript(value) {
+　　　　 document.getElementById('aaa').innerHTML= '#Server:  '+value + "\n"+ document.getElementById('aaa').innerHTML;
+　　 }
+
+</script>
+</head>
+<body>
+<div id="t_divs1" >
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase=",0,0,0" width="600" height="500" id="A" name="A" align="center">
+<param name="movie" value="JsWebsocket.swf" />
+<param name="quality" value="medium" />
+<param name="allowScriptAccess" value="sameDomain" />
+<embed src="JsWebsocket.swf" quality="medium" width="600" height="500" name="A" id="A" align="center" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="" />
+</object>
+</div>
+<textarea id="aaa"></textarea>
+<input type="button" value="Send" onclick="sendToActionScript(200);" /$amp;>amp;$lt;br />
+
+<script language="JavaScript">
+
+Ret = window.setTimeout(function(){
+　 　 　 　 　 pageInit();
+　 　 　 　 }, 1000);　　　　　　　 //此处延迟是为了解决firefox下js初始调用flash方法找不到的问题 
+
+</script>
+　 
+</body>
+</html>
