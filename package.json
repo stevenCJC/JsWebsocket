@@ -1,13 +1,7 @@
 {
-  "name": "demo",
-  "version": "0.0.0",
-  "auth": "stevencjc",
-  "email": "522702986@qq,com",
-  "private": false,
-  "dependencies": {
-    "passkee": "~1.0.3"
-  },
+  "name": "grunt",
+  "version": "0.1.0",
   "devDependencies": {
-    "redis": "^0.12.1"
+    "passkee": "",
   }
 }
